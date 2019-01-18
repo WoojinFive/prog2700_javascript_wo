@@ -1,5 +1,4 @@
 "use strict";
-var readlineSync = require("readline-sync");
 
 /*
     Author : Woojin Oh
@@ -12,6 +11,7 @@ function main()
     // Input and Variables
     //var promptString = "Triscuit";
     var promptString = "Cracker";
+    
     var promptStringArray = promptString.split(""); // Convert string to array using split.
     var newPromptStringArray = [];
     var finalString = [];
