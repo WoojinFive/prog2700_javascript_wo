@@ -60,6 +60,7 @@ function findNumber(inPromptArray) {
         }
 
         // Sort array from highest the number of consecutive numbers to lowest, then from highest sum to lowest sum
+        // https://www.sitepoint.com/sophisticated-sorting-in-javascript/
         resultArray.sort(function(a, b) {
             if(a[1] === b[1]) {
                 return a[0] < b[0];
