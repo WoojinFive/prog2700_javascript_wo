@@ -2,7 +2,7 @@
 
 /*
     Author : Woojin Oh
-    Date : Jan. 14, 2019
+    Date : Jan. 21, 2019
     Description : Assignment 1 - Question 3
 */
 
@@ -21,4 +21,4 @@ var leftMinutes = parseInt((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
 var leftSeconds = parseInt((timeDifference % (1000 * 60)) / 1000);
 
 // Output
-console.log("There are " + leftWeeks + " weeks, " + leftDays + " days, " + leftHours + " hours, " + leftMinutes + " minutes, and " + leftSeconds + " until my next birthday!");
+console.log("There are " + leftWeeks + " weeks, " + leftDays + " days, " + leftHours + " hours, " + leftMinutes + " minutes, and " + leftSeconds + " seconds until my next birthday!");

@@ -2,9 +2,13 @@
 
 /*
     Author : Woojin Oh
-    Date : Jan. 14, 2019
+    Date : Jan. 21, 2019
     Description : Assignment 1 - Question 1
 */
+
+// Input and Variables
+var promptString = "Triscuit";
+//var promptString = "Cracker";
 
 // Function for receiving a string as a parameter and then perfome converting.
 function convertString(inPromptString) {
@@ -38,10 +42,6 @@ function convertString(inPromptString) {
 
     return finalString;
 }
-
-// Input and Variables
-var promptString = "Triscuit";
-//var promptString = "Cracker";
 
 // Output
 console.log("Prompted String: " + promptString + "\n" + "Converted String: " + convertString(promptString));

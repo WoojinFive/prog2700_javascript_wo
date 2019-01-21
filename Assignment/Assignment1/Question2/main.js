@@ -2,10 +2,17 @@
 
 /*
     Author : Woojin Oh
-    Date : Jan. 14, 2019
+    Date : Jan. 21, 2019
     Description : Assignment 1 - Question 2
 */
 
+// Input and Variables
+// var promptArray = [1, 2, 3, 6, 9, 34, 2, 6];
+// var promptArray = [3, 2, 7, 5, 6, 7, 3, 8, 9, 10, 23, 2, 1, 2, 3];
+var promptArray = [100, 101, 102, 3, 4, 5, 6, 9];
+// var promptArray = [1, 3, 5, 7, 9];
+
+// Function to find consecutive increasing numbers group and make sum of them.
 function findNumber(inPromptArray) {
     var startingIndexArray = [];
     var endingIndexArray = [];
@@ -16,7 +23,6 @@ function findNumber(inPromptArray) {
     var resultArray = [];
     var resultString = "";
 
-    // Processing
     // Find starting and ending index of consecutive increasing numbers group
     for (var i = 0; i < inPromptArray.length; i++) {
         if (inPromptArray[i+1] === inPromptArray[i] + 1) {
@@ -74,11 +80,5 @@ function findNumber(inPromptArray) {
     }
 }
 
-// Input and Variables
-// var promptArray = [1, 2, 3, 6, 9, 34, 2, 6];
-// var promptArray = [3, 2, 7, 5, 6, 7, 3, 8, 9, 10, 23, 2, 1, 2, 3];
-var promptArray = [100, 101, 102, 3, 4, 5, 6, 9];
-// var promptArray = [1, 3, 5, 7, 9];
-
-
+// output
 console.log(findNumber(promptArray));
