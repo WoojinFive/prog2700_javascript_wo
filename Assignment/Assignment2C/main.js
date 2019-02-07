@@ -1,3 +1,9 @@
+/*
+    Author : Woojin Oh
+    Date : Feb. 6, 2019
+    Description : Assignment 2C - RETRIEVING API DATA
+*/
+
 // IMMEDIATELY INVOKED FUNCTION EXPRESSION
 (function() {
     // fetch api to get deck ID
