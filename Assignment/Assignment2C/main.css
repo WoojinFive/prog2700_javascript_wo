@@ -1,0 +1,22 @@
+html {
+    background: url(./background.jpg) 
+}
+body {
+    margin: 0px auto;
+    min-height: 100%;
+    min-width: 320px;
+    max-width: 1024px;
+    width: 100%;
+}
+div#card1, div#card2, div#card3, div#card4, div#card5 {
+    float: left;
+    max-width: 10%;
+}
+
+div#result {
+    clear: both;
+}
+
+img {
+    width: 120%;
+}
