@@ -1,3 +1,9 @@
+/*
+    Author : Woojin Oh
+    Date : Feb. 16, 2019
+    Description : Assignment 3B - Map, Filter, and Reduce
+*/
+
 //Choose an array method to implement for each of the incomplete functions.
 //FOR/WHILE LOOPS OF ANY KIND ARE FORBIDDEN! You must use the available array functions to accomplish your goal.
 
