@@ -1,9 +1,3 @@
-/*
-    Author : Woojin Oh
-    Date : Feb. 15, 2019
-    Description : TechCheck #2
-*/
-
 (function(){
 
     var DATA_URL = "https://mikecaines.com/api/map.json";
@@ -16,14 +10,9 @@
   
       // ADD CODE TO COMPLETE THE FUNCTION HERE...
       // you will get a console.assert error until the function is coded correctly
-      
-      // Solution 1
       for (var i = 0; i < DNA_SEQUENCE.length; i += 3) {
         codons.push(DNA_SEQUENCE.slice(i, i + 3));
       }
-
-      // Solution 2
-      // codons = dnaSequence.match(/.{1,3}/g);
 
       return codons;
     }
@@ -35,25 +24,14 @@
       
       // ADD CODE TO COMPLETE THE FUNCTION HERE...
       // you will get a console.assert error until the function is coded correctly
-      
-      // Solution 1
-      // for (var i = 0; i < codons.length; i++) {
-      //   for (var j = 0; j < jsonLookupData.length; j++) {
-      //     if (jsonLookupData[j].codons.indexOf(codons[i]) != -1) {
-      //       aminos.push(jsonLookupData[j].abbr);
-      //     }  
-      //   } 
-      // }
-        
-      // Solution 2
       for (var i = 0; i < codons.length; i++) {
         for (var j = 0; j < jsonLookupData.length; j++) {
-          if (jsonLookupData[j].codons.includes(codons[i])) {
+          if (jsonLookupData[j].codons.indexOf(codons[i]) != -1) {
             aminos.push(jsonLookupData[j].abbr);
           }  
         } 
       }
-      
+
       return aminos;
     }
     

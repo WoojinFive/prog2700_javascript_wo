@@ -176,33 +176,41 @@ var getEpisodeTallyBySeason = function(jsonInput) {
 //the name and summary of the episodes.
 //https://stackoverflow.com/questions/15604140/replace-multiple-strings-with-multiple-other-strings
 var capitalizeTheFriends = function(jsonInput) {
-    var mapObj = {
-        Joey:"JOEY",
-        Chandler:"CHANDLER",
-        Monica:"MONICA",
-        Rachel:"RACHEL",
-        Phoebe:"PHOEBE",
-        Ross:"ROSS"
-    };
-
+  return jsonInput._embedded.episodes.map(function(x) {
     var result = {};
 
-    return jsonInput._embedded.episodes.map(function(x) {
-        if (x.summary != undefined) {
-            result = {"name": x.name.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched){ return mapObj[matched]; }),
-                          "summary": x.summary.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched) { return mapObj[matched]; })
-            }
-        }
-        else if (x.summary === undefined) {
-            result = {"name": x.name.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched){ return mapObj[matched]; }),
-                          "summary": x.summary};
-        }
-        
-        return result;
-    });
-}
+    if (x.summary === undefined) {
+      result = {"summary": x.summary};
+    }
+    if (x.summary != undefined) {
+      var summary1 = x.summary.replace("Joey", "JOEY");
+      var summary2 = summary1.replace("Chandler", "CHANDLER");
+      var summary3 = summary2.replace("Monica", "MONICA");
+      var summary4 = summary3.replace("Rachel", "RACHEL");
+      var summary5 = summary4.replace("Phoebe", "PHOEBE");
+      var summary6 = summary5.replace("Ross", "ROSS");
+    }
 
-// var capitalizeTheFriends = function(jsonInput) {
+
+    if (x.name === undefined) {
+      result = {"name": x.name};
+    }
+    if (x.name != undefined) {
+      var name1 = x.name.replace("Joey", "JOEY");
+      var name2 = name1.replace("Chandler", "CHANDLER");
+      var name3 = name2.replace("Monica", "MONICA");
+      var name4 = name3.replace("Rachel", "RACHEL");
+      var name5 = name4.replace("Phoebe", "PHOEBE");
+      var name6 = name5.replace("Ross", "ROSS");
+
+      result = {"name": , "summary": summary6};
+    }
+
+    return result;
+  });
+  
+}
+  
 //     var mapObj = {
 //         Joey:"JOEY",
 //         Chandler:"CHANDLER",
@@ -212,74 +220,41 @@ var capitalizeTheFriends = function(jsonInput) {
 //         Ross:"ROSS"
 //     };
 
-//     jsonInput._embedded.episodes.map(function(x) {
+//     return jsonInput._embedded.episodes.map(function(x) {
 //         if (x.summary != undefined) {
-//             x.name = x.name.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched){ return mapObj[matched]; });
-//             x.summary = x.summary.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched) { return mapObj[matched]; });
+//             var result = {"name": x.name.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched){ return mapObj[matched]; }),
+//                           "summary": x.summary.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched) { return mapObj[matched]; })
+//             }
 //         }
 //         else if (x.summary === undefined) {
-//             x.name = x.name.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched){ return mapObj[matched]; });
-//             x.summary = x.summary;
+//             var result = {"name": x.name.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched){ return mapObj[matched]; }),
+//                           "summary": x.summary};
 //         }
+        
+//         return result;
 //     });
-
-//     return jsonInput;
 // }
 
-// var capitalizeTheFriends = function(jsonInput) {
-//     return jsonInput._embedded.episodes.map(function(x) {
-//       var result = {};
-  
-//       if (x.summary === undefined) {
-//         result = {"summary": x.summary};
-//       }
-//       if (x.summary != undefined) {
-//         if(x.summary.includes("Joey")) {
-//           result = {"summary": x.summary.replace("Joey", "JOEY")};
-//         }
-//         else if(x.summary.includes("Chandler")) {
-//           result = {"summary": x.summary.replace("Chandler", "CHANDLER")};
-//         }
-//         else if(x.summary.includes("Monica")) {
-//           result = {"summary": x.summary.replace("Monica", "MONICA")};
-//         }
-//         else if(x.summary.includes("Rachel")) {
-//           result = {"summary": x.summary.replace("Rachel", "RACHEL")};
-//         }
-//         else if(x.summary.includes("Phoebe")) {
-//           result = {"summary": x.summary.replace("Phoebe", "PHOEBE")};
-//         }
-//         else if(x.summary.includes("Ross")) {
-//           result = {"summary": x.summary.replace("Ross", "ROSS")};
-//         }
-//       }
-  
-  
-//       if (x.name === undefined) {
-//         result = {"name": x.name};
-//       }
-//       if (x.name != undefined) {
-//         if(x.name.includes("Joey")) {
-//           result = {"name": x.name.replace("Joey", "JOEY")};
-//         }
-//         else if(x.name.includes("Chandler")) {
-//           result = {"name": x.name.replace("Chandler", "CHANDLER")};
-//         }
-//         else if(x.name.includes("Monica")) {
-//           result = {"name": x.name.replace("Monica", "MONICA")};
-//         }
-//         else if(x.name.includes("Rachel")) {
-//           result = {"name": x.name.replace("Rachel", "RACHEL")};
-//         }
-//         else if(x.name.includes("Phoebe")) {
-//           result = {"name": x.name.replace("Phoebe", "PHOEBE")};
-//         }
-//         else if(x.name.includes("Ross")) {
-//           result = {"name": x.name.replace("Ross", "ROSS")};
-//         }
-//       }
-  
-//       return result;
-//     });
-    
-//   }
+// // var capitalizeTheFriends = function(jsonInput) {
+// //     var mapObj = {
+// //         Joey:"JOEY",
+// //         Chandler:"CHANDLER",
+// //         Monica:"MONICA",
+// //         Rachel:"RACHEL",
+// //         Phoebe:"PHOEBE",
+// //         Ross:"ROSS"
+// //     };
+
+// //     jsonInput._embedded.episodes.map(function(x) {
+// //         if (x.summary != undefined) {
+// //             x.name = x.name.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched){ return mapObj[matched]; });
+// //             x.summary = x.summary.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched) { return mapObj[matched]; });
+// //         }
+// //         else if (x.summary === undefined) {
+// //             x.name = x.name.replace(/Joey|Chandler|Monica|Rachel|Phoebe|Ross/gi, function(matched){ return mapObj[matched]; });
+// //             x.summary = x.summary;
+// //         }
+// //     });
+
+// //     return jsonInput;
+// // }

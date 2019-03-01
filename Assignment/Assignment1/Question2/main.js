@@ -9,7 +9,7 @@
 // Input and Variables
 // var promptArray = [1, 2, 3, 6, 9, 34, 2, 6];
 // var promptArray = [3, 2, 7, 5, 6, 7, 3, 8, 9, 10, 23, 2, 1, 2, 3];
-var promptArray = [100, 101, 102, 3, 4, 5, 6, 9];
+// var promptArray = [100, 101, 102, 3, 4, 5, 6, 9];
 // var promptArray = [1, 3, 5, 7, 9];
 
 // Function to find consecutive increasing numbers group and make sum of them.
@@ -71,7 +71,7 @@ function findNumber(inPromptArray) {
             if(a[1] === b[1]) {
                 return a[0] < b[0];
             }
-
+//  resultArray [[sum of numbers],[number of ...]]
             return a[1] < b[1];
         });
 

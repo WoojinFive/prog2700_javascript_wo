@@ -7,8 +7,8 @@
 */
 
 // Input and Variables
-var promptString = "Triscuit";
-//var promptString = "Cracker";
+//var promptString = "Triscuit";
+var promptString = "Cracker";
 
 // Function for receiving a string as a parameter and then perfome converting.
 function convertString(inPromptString) {

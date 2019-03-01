@@ -1,4 +1,4 @@
-/*
+ /*
     Author : Woojin Oh
     Date : Feb. 27, 2019
     Description : Assignment 3C - FLIGHT TRACKER
@@ -6,8 +6,11 @@
 
 (function(){
 
+    
     //create map in leaflet and tie it to the div called 'theMap'
     var map = L.map('theMap').setView([42, -60], 4);
+
+    var geoJsonLayer = L.geoJSON();;
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -27,7 +30,7 @@
                 console.log('Raw Data');
                 console.log(json);
 
-                var filteredJson = json.states.filter(x => x.includes('Canada') && x[5] !== null && x[6] !== null)
+                var filteredJson = json.states.filter(x => x[2] === 'Canada' && x[5] !== null && x[6] !== null)
                                               .map(x => result = {"icao24": x[0], "callsign": x[1], "origin_country": x[2], "time_position": x[3], "last_contact": x[4], "longitude": x[5], "latitude": x[6], "geo_altitude": x[7], "on_ground": x[8], "velocity": x[9], "heading": x[10], "vertical_rate": x[11], "sensors": x[12], "baro_altitude": x[13], "squawk": x[14], "spi": x[15], "position_source": x[16]});
                 console.log('--------------------------------');
                 console.log('Filtered Data');
@@ -69,11 +72,12 @@
                 var myLayerOptions = {
                     pointToLayer: createCustomIcon
                 }
-                
-                var geoJsonLayer = L.geoJSON(geojsonFeature, myLayerOptions);
+                // removeLayer for refresh makers
+                map.removeLayer(geoJsonLayer); 
+                geoJsonLayer = L.geoJSON(geojsonFeature, myLayerOptions);
                 geoJsonLayer.addTo(map);
 
-                setTimeout(function() { map.removeLayer(geoJsonLayer); loadFetch();}, 7000);
+                setTimeout(function() { loadFetch();}, 7000);
             })
     }
 

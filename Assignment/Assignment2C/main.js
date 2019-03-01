@@ -19,10 +19,113 @@
                 //JQUERY AJAX CALL
                 $(document).ready(function(){
                     $.ajax(
-                        {
-                            url: 'https://deckofcardsapi.com/api/deck/' + deckID + '/draw/?count=5', 
+                        {                            
+                            //url: 'https://www.mikecaines.com/cards/royalflush.json',
+                            //url: 'https://www.mikecaines.com/cards/straightflush.json',
+                            //url: 'https://www.mikecaines.com/cards/fourofakind.json',
+                            url: 'https://www.mikecaines.com/cards/fullhouse.json',
+                            //url: 'https://www.mikecaines.com/cards/flush.json',
+                            //url: 'https://www.mikecaines.com/cards/highstraight.json',
+                            //url: 'https://www.mikecaines.com/cards/lowstraight.json',
+                            //url: 'https://www.mikecaines.com/cards/threeofakind.json',
+                            //url: 'https://www.mikecaines.com/cards/twopair.json',
+                            //url: 'https://www.mikecaines.com/cards/pair.json',
+                            //url: 'https://www.mikecaines.com/cards/acehigh.json',
+
+                            //url: 'https://deckofcardsapi.com/api/deck/' + deckID + '/draw/?count=5', 
                             success: function(result)
                                 {
+                                    ////////////////////////// 
+                                    // hard coding for test //
+                                    //////////////////////////
+                                    // Royal Flush
+                                    // var result = { remaining: 47, success: true, deck_id: "88ou46m6qhy9", cards:
+                                    //     [
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AS.svg", png: "https://deckofcardsapi.com/static/img/AS.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/AS.png", code: "AS"},
+                                    //         {value: "10", images: {svg: "https://deckofcardsapi.com/static/img/0S.svg", png: "https://deckofcardsapi.com/static/img/0S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/0S.png", code: "0S"},
+                                    //         {value: "KING", images: {svg: "https://deckofcardsapi.com/static/img/KS.svg", png: "https://deckofcardsapi.com/static/img/KS.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/KS.png", code: "KS"},
+                                    //         {value: "QUEEN", images: {svg: "https://deckofcardsapi.com/static/img/QS.svg", png: "https://deckofcardsapi.com/static/img/QS.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/QS.png", code: "QS"},
+                                    //         {value: "JACK", images: {svg: "https://deckofcardsapi.com/static/img/JS.svg", png: "https://deckofcardsapi.com/static/img/JS.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/JS.png", code: "JS"}
+                                    //     ]
+                                    // }
+                                    
+                                    // Straight Flush
+                                    // var result = { remaining: 47, success: true, deck_id: "88ou46m6qhy9", cards: 
+                                    //     [
+                                    //         {value: "9", images: {svg: "https://deckofcardsapi.com/static/img/9S.svg", png: "https://deckofcardsapi.com/static/img/9S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/9S.png", code: "9S"},
+                                    //         {value: "5", images: {svg: "https://deckofcardsapi.com/static/img/5S.svg", png: "https://deckofcardsapi.com/static/img/5S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/5S.png", code: "5S"},
+                                    //         {value: "7", images: {svg: "https://deckofcardsapi.com/static/img/7S.svg", png: "https://deckofcardsapi.com/static/img/7S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/7S.png", code: "7S"},
+                                    //         {value: "6", images: {svg: "https://deckofcardsapi.com/static/img/6S.svg", png: "https://deckofcardsapi.com/static/img/6S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/6S.png", code: "6S"},
+                                    //         {value: "8", images: {svg: "https://deckofcardsapi.com/static/img/8S.svg", png: "https://deckofcardsapi.com/static/img/8S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/8S.png", code: "8S"}
+                                    //     ]
+                                    // }
+                                    
+                                    // Four of a kind
+                                    // var result = { remaining: 47, success: true, deck_id: "88ou46m6qhy9", cards: 
+                                    //     [
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AS.svg", png: "https://deckofcardsapi.com/static/img/AS.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/AS.png", code: "AS"},
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AC.svg", png: "https://deckofcardsapi.com/static/img/AC.png"}, suit: "CLUBS", image: "https://deckofcardsapi.com/static/img/AC.png", code: "AC"},
+                                    //         {value: "2", images: {svg: "https://deckofcardsapi.com/static/img/2S.svg", png: "https://deckofcardsapi.com/static/img/2S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/2S.png", code: "2S"},
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AH.svg", png: "https://deckofcardsapi.com/static/img/AH.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/AH.png", code: "AH"},
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AD.svg", png: "https://deckofcardsapi.com/static/img/AD.png"}, suit: "DIAMONDS", image: "https://deckofcardsapi.com/static/img/AD.png", code: "AD"}
+                                    //     ]
+                                    // }
+
+                                    // Full Hous
+                                    // var result = { remaining: 47, success: true, deck_id: "88ou46m6qhy9", cards: 
+                                    //     [
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AH.svg", png: "https://deckofcardsapi.com/static/img/AH.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/AH.png", code: "AH"},
+                                    //         {value: "2", images: {svg: "https://deckofcardsapi.com/static/img/2H.svg", png: "https://deckofcardsapi.com/static/img/2H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/2H.png", code: "2H"},
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AC.svg", png: "https://deckofcardsapi.com/static/img/AC.png"}, suit: "CLUBS", image: "https://deckofcardsapi.com/static/img/AC.png", code: "AC"},
+                                    //         {value: "2", images: {svg: "https://deckofcardsapi.com/static/img/2S.svg", png: "https://deckofcardsapi.com/static/img/2S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/2S.png", code: "2S"},
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AD.svg", png: "https://deckofcardsapi.com/static/img/AD.png"}, suit: "DIAMONDS", image: "https://deckofcardsapi.com/static/img/AD.png", code: "AD"}
+                                    //     ]
+                                    // }
+
+                                    // Flush
+                                    // var result = { remaining: 47, success: true, deck_id: "88ou46m6qhy9", cards: 
+                                    //     [
+                                    //         {value: "2", images: {svg: "https://deckofcardsapi.com/static/img/2H.svg", png: "https://deckofcardsapi.com/static/img/2H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/2H.png", code: "2H"},
+                                    //         {value: "5", images: {svg: "https://deckofcardsapi.com/static/img/5H.svg", png: "https://deckofcardsapi.com/static/img/5H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/5H.png", code: "5H"},
+                                    //         {value: "8", images: {svg: "https://deckofcardsapi.com/static/img/8H.svg", png: "https://deckofcardsapi.com/static/img/8H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/8H.png", code: "8H"},
+                                    //         {value: "QUEEN", images: {svg: "https://deckofcardsapi.com/static/img/QH.svg", png: "https://deckofcardsapi.com/static/img/QH.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/QH.png", code: "QH"},
+                                    //         {value: "3", images: {svg: "https://deckofcardsapi.com/static/img/3H.svg", png: "https://deckofcardsapi.com/static/img/3H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/3H.png", code: "3H"}
+                                    //     ]
+                                    // }
+
+                                    // Straight
+                                    // var result = { remaining: 47, success: true, deck_id: "88ou46m6qhy9", cards: 
+                                    //     [
+                                    //         {value: "3", images: {svg: "https://deckofcardsapi.com/static/img/3H.svg", png: "https://deckofcardsapi.com/static/img/3H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/3H.png", code: "3H"},
+                                    //         {value: "5", images: {svg: "https://deckofcardsapi.com/static/img/5S.svg", png: "https://deckofcardsapi.com/static/img/5S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/5S.png", code: "5S"},
+                                    //         {value: "4", images: {svg: "https://deckofcardsapi.com/static/img/4H.svg", png: "https://deckofcardsapi.com/static/img/4H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/4H.png", code: "4H"},
+                                    //         {value: "7", images: {svg: "https://deckofcardsapi.com/static/img/7C.svg", png: "https://deckofcardsapi.com/static/img/7C.png"}, suit: "CLUBS", image: "https://deckofcardsapi.com/static/img/7C.png", code: "7C"},
+                                    //         {value: "6", images: {svg: "https://deckofcardsapi.com/static/img/6D.svg", png: "https://deckofcardsapi.com/static/img/6D.png"}, suit: "DIAMONDS", image: "https://deckofcardsapi.com/static/img/6D.png", code: "6D"}
+                                    //     ]
+                                    // }
+
+                                    // Straight A, 2, 3, 4, 5
+                                    // var result = { remaining: 47, success: true, deck_id: "88ou46m6qhy9", cards: 
+                                    //     [
+                                    //         {value: "3", images: {svg: "https://deckofcardsapi.com/static/img/3H.svg", png: "https://deckofcardsapi.com/static/img/3H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/3H.png", code: "3H"},
+                                    //         {value: "5", images: {svg: "https://deckofcardsapi.com/static/img/5S.svg", png: "https://deckofcardsapi.com/static/img/5S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/5S.png", code: "5S"},
+                                    //         {value: "4", images: {svg: "https://deckofcardsapi.com/static/img/4H.svg", png: "https://deckofcardsapi.com/static/img/4H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/4H.png", code: "4H"},
+                                    //         {value: "ACE", images: {svg: "https://deckofcardsapi.com/static/img/AC.svg", png: "https://deckofcardsapi.com/static/img/AC.png"}, suit: "CLUBS", image: "https://deckofcardsapi.com/static/img/AC.png", code: "AC"},
+                                    //         {value: "2", images: {svg: "https://deckofcardsapi.com/static/img/2D.svg", png: "https://deckofcardsapi.com/static/img/2D.png"}, suit: "DIAMONDS", image: "https://deckofcardsapi.com/static/img/2D.png", code: "2D"}
+                                    //     ]
+                                    // }
+
+                                    // Three of a kind
+                                    // var result = { remaining: 47, success: true, deck_id: "88ou46m6qhy9", cards: 
+                                    //     [
+                                    //         {value: "3", images: {svg: "https://deckofcardsapi.com/static/img/3H.svg", png: "https://deckofcardsapi.com/static/img/3H.png"}, suit: "HEARTS", image: "https://deckofcardsapi.com/static/img/3H.png", code: "3H"},
+                                    //         {value: "QUEEN", images: {svg: "https://deckofcardsapi.com/static/img/QS.svg", png: "https://deckofcardsapi.com/static/img/QS.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/QS.png", code: "QS"},
+                                    //         {value: "3", images: {svg: "https://deckofcardsapi.com/static/img/3S.svg", png: "https://deckofcardsapi.com/static/img/3S.png"}, suit: "SPADES", image: "https://deckofcardsapi.com/static/img/3S.png", code: "3S"},
+                                    //         {value: "JACK", images: {svg: "https://deckofcardsapi.com/static/img/JC.svg", png: "https://deckofcardsapi.com/static/img/JC.png"}, suit: "CLUBS", image: "https://deckofcardsapi.com/static/img/JC.png", code: "JC"},
+                                    //         {value: "3", images: {svg: "https://deckofcardsapi.com/static/img/3D.svg", png: "https://deckofcardsapi.com/static/img/3D.png"}, suit: "DIAMONDS", image: "https://deckofcardsapi.com/static/img/3D.png", code: "3D"}
+                                    //     ]
+                                    // }
+
                                     // display given cards on the screen
                                     for(var i = 0; i < result.cards.length; i++) {
                                         $(`#givenCards #card${i+1} #value`).html(result.cards[i].value);
@@ -115,6 +218,20 @@
 
                                     // check Straight flush
                                     function checkStraightFlush(inputArr) {
+                                        // find a case that [2, 3, 4, 5, "ACE"]
+                                        var tempIndexNumberArr = [];
+                                        // store current indexNumber into tempIndexNumberArr
+                                        for (var i = 0; i < inputArr.cards.length; i++) {
+                                            tempIndexNumberArr.push(inputArr.cards[i].indexNumber);
+                                        }
+                                        // if this case is [2, 3, 4, 5, "ACE"], then set -1 as index of "ACE"
+                                        if (tempIndexNumberArr.includes(0) && tempIndexNumberArr.includes(1) && tempIndexNumberArr.includes(2) && tempIndexNumberArr.includes(3) && tempIndexNumberArr.includes(12)) {
+                                            inputArr.cards[inputArr.cards.length - 1].indexNumber = -1;
+                                            // sort again by index
+                                            // [8, 10, 1, 12, 0] -> [0, 1, 8, 10, 12]
+                                            result.cards.sort((a, b) => a.indexNumber - b.indexNumber);
+                                        }
+                                        
                                         // check consecutive increasing numbers
                                         for (var i = 0; i < inputArr.cards.length - 1; i++) {
                                             if (inputArr.cards[i+1].indexNumber !== inputArr.cards[i].indexNumber + 1) {
@@ -187,33 +304,34 @@
                                         return false;
                                     }
 
+                                    // show the result on the screen
+                                    function outputResult(input) {
+                                        $(`#result #card${input+1} #value`).html(result.cards[input].value);
+                                        $(`#result #card${input+1} #suit`).html(result.cards[input].suit);
+                                        $(`#result #card${input+1} #image`).html(`<img src="` + result.cards[input].image + `">`);
+                                    }
+
                                     // check result
                                     if (checkAllSuitsSame(result)) {
                                         // Royal Flush = checkAllSuitsSame: true && checkRoyalFlush: true
                                         if (checkRoyalFlush(result)) {
                                             $(`#resultArea`).html('Result : ' + scoreStringArray[0]);
                                             for(var i = 0; i < result.cards.length; i++) {
-                                                $(`#result #card${i+1} #value`).html(result.cards[i].value);
-                                                $(`#result #card${i+1} #suit`).html(result.cards[i].suit);
-                                                $(`#result #card${i+1} #image`).html(`<img src="` + result.cards[i].image + `">`);
+                                                outputResult(i);
                                             } 
                                         }
                                         // Straight Flush = checkAllSuitsSame: true && checkStraightFlush: true
                                         else if (checkStraightFlush(result)) {
                                             $(`#resultArea`).html('Result : ' + scoreStringArray[1]);
                                             for(var i = 0; i < result.cards.length; i++) {
-                                                $(`#result #card${i+1} #value`).html(result.cards[i].value);
-                                                $(`#result #card${i+1} #suit`).html(result.cards[i].suit);
-                                                $(`#result #card${i+1} #image`).html(`<img src="` + result.cards[i].image + `">`);
+                                                outputResult(i);
                                             } 
                                         }
                                         // Flush = checkAllSuitsSame: true && checkRoyalFlush: false && checkStraightFlush: false
                                         else {
                                             $(`#resultArea`).html('Result : ' + scoreStringArray[4]);
                                             for(var i = 0; i < result.cards.length; i++) {
-                                                $(`#result #card${i+1} #value`).html(result.cards[i].value);
-                                                $(`#result #card${i+1} #suit`).html(result.cards[i].suit);
-                                                $(`#result #card${i+1} #image`).html(`<img src="` + result.cards[i].image + `">`);
+                                                outputResult(i);
                                             } 
                                         }
                                     }
@@ -224,9 +342,7 @@
                                             if (checkSameValue(result)[i].count === 4) {
                                                 for (var j = 0; j < result.cards.length; j++) {
                                                     if (checkSameValue(result)[i].value === result.cards[j].value) {
-                                                        $(`#result #card${j+1} #value`).html(result.cards[j].value);
-                                                        $(`#result #card${j+1} #suit`).html(result.cards[j].suit);
-                                                        $(`#result #card${j+1} #image`).html(`<img src="` + result.cards[j].image + `">`);
+                                                        outputResult(j);
                                                     }
                                                 }
                                             }
@@ -236,18 +352,14 @@
                                     else if (checkPair(result) && checkThreeSameCards(result)) {
                                         $(`#resultArea`).html('Result : ' + scoreStringArray[3]);
                                         for(var i = 0; i < result.cards.length; i++) {
-                                            $(`#result #card${i+1} #value`).html(result.cards[i].value);
-                                            $(`#result #card${i+1} #suit`).html(result.cards[i].suit);
-                                            $(`#result #card${i+1} #image`).html(`<img src="` + result.cards[i].image + `">`);
+                                            outputResult(i);
                                         } 
                                     }
                                     // Straight = checkAllSuitsSame: false && checkStraightFlush: true
                                     else if (checkStraightFlush(result)) {
                                         $(`#resultArea`).html('Result : ' + scoreStringArray[5]);
                                         for(var i = 0; i < result.cards.length; i++) {
-                                            $(`#result #card${i+1} #value`).html(result.cards[i].value);
-                                            $(`#result #card${i+1} #suit`).html(result.cards[i].suit);
-                                            $(`#result #card${i+1} #image`).html(`<img src="` + result.cards[i].image + `">`);
+                                            outputResult(i);
                                         } 
                                     }
                                     // Three of a kind = checkAllSuitsSame: false && checkThreeSameCards: true
@@ -257,9 +369,7 @@
                                             if (checkSameValue(result)[i].count === 3) {
                                                 for (var j = 0; j < result.cards.length; j++) {
                                                     if (checkSameValue(result)[i].value === result.cards[j].value) {
-                                                        $(`#result #card${j+1} #value`).html(result.cards[j].value);
-                                                        $(`#result #card${j+1} #suit`).html(result.cards[j].suit);
-                                                        $(`#result #card${j+1} #image`).html(`<img src="` + result.cards[j].image + `">`);
+                                                        outputResult(j);
                                                     }
                                                 }
                                             }
@@ -272,9 +382,7 @@
                                             if (checkSameValue(result)[i].count === 2) {
                                                 for (var j = 0; j < result.cards.length; j++) {
                                                     if (checkSameValue(result)[i].value === result.cards[j].value) {
-                                                        $(`#result #card${j+1} #value`).html(result.cards[j].value);
-                                                        $(`#result #card${j+1} #suit`).html(result.cards[j].suit);
-                                                        $(`#result #card${j+1} #image`).html(`<img src="` + result.cards[j].image + `">`);
+                                                        outputResult(j);
                                                     }
                                                 }
                                             }
@@ -287,9 +395,7 @@
                                             if (checkSameValue(result)[i].count === 2) {
                                                 for (var j = 0; j < result.cards.length; j++) {
                                                     if (checkSameValue(result)[i].value === result.cards[j].value) {
-                                                        $(`#result #card${j+1} #value`).html(result.cards[j].value);
-                                                        $(`#result #card${j+1} #suit`).html(result.cards[j].suit);
-                                                        $(`#result #card${j+1} #image`).html(`<img src="` + result.cards[j].image + `">`);
+                                                        outputResult(j);
                                                     }
                                                 }
                                             }
@@ -297,7 +403,7 @@
                                     }
                                     // High card = else case
                                     else {
-                                        $(`#resultArea`).html('Result : ' + scoreStringArray[9]);
+                                        $(`#resultArea`).html('Result : ' + result.cards[4].value + ' ' + scoreStringArray[9]);
                                         $(`#result #card1 #value`).html(result.cards[4].value);
                                         $(`#result #card1 #suit`).html(result.cards[4].suit);
                                         $(`#result #card1 #image`).html(`<img src="` + result.cards[4].image + `">`);
@@ -306,7 +412,5 @@
                             });
                         
                         });
-
-            
         })
     }) ();

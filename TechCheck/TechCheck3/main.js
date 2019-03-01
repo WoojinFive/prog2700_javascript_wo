@@ -1,3 +1,9 @@
+/*
+    Author : Woojin Oh
+    Date : Mar. 1, 2019
+    Description : TECH CHECK #3 - Array FUNctions
+*/
+
 //PROG 2700 - CLIENT SIDE PROGRAMMING
 //TECH CHECK #3 - Array FUNctions
 
