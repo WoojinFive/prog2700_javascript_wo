@@ -1,3 +1,9 @@
+/*
+    Author : Woojin Oh
+    Date : Mar. 25, 2019
+    Description : Assignment 4 - 3 in a row puzzle
+*/
+
 (function(){
   function runGame(){
 
@@ -204,10 +210,11 @@
           restartButton.addEventListener('click', function() {
             var scriptNodeArr = document.getElementsByTagName('script');
             var scriptNode = scriptNodeArr[0];
+            console.log(scriptNode);
       
             while (document.body.lastChild !== scriptNode) {
               var target = document.body.lastChild;
-                  target.parentNode.removeChild(target);
+              target.parentNode.removeChild(target);
             }
             runGame();
           });
@@ -270,14 +277,8 @@
           });
         })();
         ////// showResult function end //////
-
       })
       ////// fetch end //////
-
-
   }
-
   runGame();
-
-
 })()
