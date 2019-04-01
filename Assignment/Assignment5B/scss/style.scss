@@ -1,0 +1,223 @@
+// 3.	Add Sass variables for any fonts and colours in the CSS file and replace them throughout.
+$body-font-family: 'Open Sans', sans-serif;
+$body-bg-color: 	#DCDCDC;
+$body-font-color: 	#F0FFFF;
+$intro-bg-color: 	#A9A9A9;
+$intro-p-text-color: #FAEBD7;
+$nav-ul-bg-color: #808080;
+$nav-a-font-color: #006400;
+$nav-a-hover-font-color: #8FBC8F;
+$work-header-font-color: #2F4F4F;
+$project-font-color: #2F4F4F;
+$project-title-font-weight: bold;
+$show-all-bg-color: #778899;
+$show-all-text-color: #2F4F4F;
+$show-all-font-weight: bold;
+$show-all-hover-bg-color: #A9A9A9;
+$show-all-hover-text-color: #000000;
+$contact-bg-color: #BC8F8F;
+$contact-details-font-weight: bold;
+$contact-details-bg-color: #778899;
+$contact-details-text-color: #2F4F4F;
+$contact-details-hover-bg-color: #A9A9A9;
+$contact-details-hover-text-color: #000000;
+$footer-bg-color: #A9A9A9;
+$footer-font-color: #2F4F4F;
+$footer-a-font-color: #2F4F4F;
+$border-color: #B22222;
+
+html,
+body {
+  font-family: $body-font-family;
+  text-align: center;
+  background: $body-bg-color;
+  color: $body-font-color;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// 4.	Adjust the stylesheet to use Sass nesting of styles and classes in the following list of classes/elements.
+.intro {
+  top: 0;
+  background: $intro-bg-color;
+  min-height: 55vh;
+  padding-top: 45vh;
+  /*   line-height: 100vh; */
+  /*   width:100%;
+  height:96vh;
+border:solid; */
+  p {
+  color: $intro-p-text-color;
+  }
+}
+
+nav ul {
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  background-color: $nav-ul-bg-color;
+  li {
+  display: inline-block;
+  margin: 55px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  a {
+    color: $nav-a-font-color;
+    text-decoration: none;
+    }
+  }
+}
+
+nav ul li a:hover {
+  color: $nav-a-hover-font-color;
+}
+
+.work {
+  padding-top: 60px;
+  margin-top: -60px;
+  .work-header {
+    margin-top: 50px;
+    color: $work-header-font-color;
+    font-weight: normal;
+  }
+}
+
+// 5.	Use a mixin to add a drop-shadow to each box holding a project link
+ @mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+
+.project {
+  text-decoration: none;
+  color: $project-font-color;
+  display: inline-block;
+  overflow: hidden;
+  border: 2px solid lightblue;
+  height: 220px;
+  width: 280px;
+  margin: 40px 100px;
+  @include box-shadow(20px, 20px, 10px, #888);
+  /*   background: url("https://res.cloudinary.com/dck40m3wf/image/upload/v1455459914/Portfolio/fancy-floral-pattern-384.jpg") repeat; */
+}
+
+.project-pic {
+  width: 100%;
+  height: 180px;
+  border-bottom: 2px solid lightblue;
+}
+
+.project-title {
+  font-weight: $project-title-font-weight;
+}
+
+// 6.	Add a mixin that will take a parameter and conditionally (using @if) change the cursor for a hyperlink.
+@mixin cursor($val) {
+  @if $val == 1 {
+    cursor: crosshair;
+  }
+  @else if $val == 2 {
+    cursor: wait;
+  }
+  @else if $val == 3 {
+    cursor: pointer;
+  }
+  @else {
+    cursor: auto;
+  }
+}
+
+.show-all {
+  text-decoration: none;
+  display: block;
+  width: 200px;
+  height: 30px;
+  margin: 20px auto 90px;
+  background: $show-all-bg-color;
+  color: $show-all-text-color;
+  font-weight: $show-all-font-weight;
+  font-size: 1em;
+  border: 2px solid $border-color;
+  border-radius: 4px;
+  @include cursor(3);
+  padding-top:10px;
+}
+
+
+.show-all:hover {
+  background: $show-all-hover-bg-color;
+  color: $show-all-hover-text-color;
+}
+
+@media only screen and (max-width: 500px) {
+  nav ul {
+    text-align: center;
+  }
+  nav ul li {
+    margin: 20px;
+  }
+  .project {
+    margin: 40px 0;
+  }
+}
+
+.contact {
+  /*   height:800px; */
+  /*   min-height:800px; */
+  background: $contact-bg-color;
+  padding-bottom: 160px;
+}
+
+.header {
+  padding: 160px 0 110px;
+}
+
+.contact-details {
+  display: inline-block;
+  font-weight: $contact-details-font-weight;
+  margin: 0 35px 45px 35px;
+  list-style-type: none;
+  border: 2px solid $border-color;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background: $contact-details-bg-color;
+  color: $contact-details-text-color;
+  text-decoration: none;
+  @include cursor(1);
+}
+
+.contact-details:hover {
+  background: $contact-details-hover-bg-color;
+  color: $contact-details-hover-text-color;
+}
+
+footer {
+  padding: 20px;
+  background: $footer-bg-color;
+  color: $footer-font-color;
+  line-height: 40px;
+  footer a {
+    color: $footer-a-font-color;
+  }
+}
+
+@media only screen and (max-width: 367px) {
+  /*    #contact{
+    min-height:1100px;
+  } */
+  .contact-details {
+    border: 2px solid $border-color;
+    border-radius: 0;
+    width: 90px;
+    height: 20px;
+    padding: 10px;
+    line-height: normal;
+  }
+}
